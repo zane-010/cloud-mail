@@ -50,16 +50,6 @@ const settingService = {
 		domainList = domainList.map(item => '@' + item);
 		setting.domainList = domainList;
 
-		let projectLink = c.env.project_link;
-		if (typeof projectLink === 'string' && projectLink === 'false') {
-			projectLink = false
-		} else if (projectLink === false) {
-			projectLink = false
-		} else {
-			projectLink = true
-		}
-
-		setting.projectLink = projectLink;
 		setting.loginVerify ??= settingConst.loginVerify.CLOSE;
 		setting.loginVerifyCount ??= 1;
 
@@ -240,7 +230,6 @@ const settingService = {
 			googleClientId: settingRow.googleClientId,
 			googleSwitch: settingRow.googleSwitch,
 			minEmailPrefix: settingRow.minEmailPrefix,
-			projectLink: settingRow.projectLink
 		};
 	},
 
